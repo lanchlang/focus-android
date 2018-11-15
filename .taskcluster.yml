@@ -59,7 +59,8 @@ tasks:
 ###############################################################################
   - $if: 'tasks_for == "github-push"'
     then:
-      $if: 'event.ref == "refs/heads/master"'
+      #$if: 'event.ref == "refs/heads/master"'
+      $if: 'event.ref == "refs/heads/remove-x86"'
       then:
         taskId: {$eval: as_slugid("decision_task")}
         # The next line won't be needed anymore after https://github.com/taskcluster/taskcluster-github/pull/273
